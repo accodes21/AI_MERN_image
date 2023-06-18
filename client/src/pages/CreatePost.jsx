@@ -57,9 +57,31 @@ const CreatePost = () => {
             isSurpriseMe
             handleSurpriseMe={handleSurpriseMe}
           />
-        </div>
-      </form>
+      <div 
+        className='relative bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-[#6469ff] focus:border-[#4649ff] w-64 p-3 h-64 flex justify-center items-center mt-2'
+        >
+        {form.photo ? (
+          <img 
+          src={form.photo} 
+          alt={form.prompt} 
+          className='w-full h-full object-contain'
+          />
+          ) : (
+            <img 
+            src={preview} 
+            alt={preview} 
+            className='w-9/12 h-9/12 object-contain'
+            />
+            )}
 
+        {generateImg && (
+          <div className='absolute inset-0 z-0 flex justify-center items-center rounded-lg bg-[rgba(0,0,0,0.5)]'>
+            <Loader/>
+          </div>
+        )}
+      </div>
+      </div>
+    </form>
     </section>
   )
 }
