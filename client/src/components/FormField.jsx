@@ -9,7 +9,7 @@ const FormField = ({labelName, type, name, placeholder, value, handleChange, isS
           <button
             type="button"
             onClick={handleSurpriseMe}
-            className="font-semibold text-xs bg-[#ECECF1] py-1 px-2 rounded-[5px] text-black"
+            className="font-semibold text-xs bg-yellow-400 py-1 px-2 rounded-[5px] text-black hover:bg-yellow-500 hover:scale-105 hover:text-gray-900 transition-all"
           >
             Surprise Me
           </button>
