@@ -21,11 +21,16 @@ const CreatePost = () => {
   }
 
   const handleChange = (e) => {
-
+    setForm({...form, [e.target.value] : e.target.value})
   }
 
   const handleSurpriseMe = () => {
-    
+    const randomPrompt = getRandomPrompt(form.prompt)
+    setForm({...form, prompt:randomPrompt})
+  }
+
+  const generateImage = () => {
+
   }
 
   return (
@@ -80,6 +85,15 @@ const CreatePost = () => {
           </div>
         )}
       </div>
+      </div>
+      <div className='mt-5 flex gap-5'>
+          <button
+            type='button'
+            onClick={generateImage}
+            className='text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2 text-center hover:bg-green-600 hover:scale-105 transition-all'
+          >
+            {generateImg ? "Generating..." : "Generate"}
+          </button>
       </div>
     </form>
     </section>
